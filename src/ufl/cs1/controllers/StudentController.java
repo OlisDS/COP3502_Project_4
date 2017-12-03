@@ -39,7 +39,8 @@ public final class StudentController implements DefenderController
 	public int[] ghost1(){
 	    /* FIXME, blank method for now.
 	    Intercepter-kun work off premise IF it can get between pacman and the pill he's going to get between the two on
-	    pacman's current/predicted path (shortest)
+	    pacman's current/predicted path (shortest), the best way of doing this would be to figure out the shortest path
+	    to pacman's path but prioritize nodes later on in pacman's path (as he will be moving)
 	    ELSE should wait at safe distance (out of pacman's reach for when he gets the pill)
 	     */
 

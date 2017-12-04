@@ -1,8 +1,10 @@
 package ufl.cs1.controllers;
 
 import game.controllers.DefenderController;
+import game.models.Actor;
 import game.models.Defender;
 import game.models.Game;
+import game.models.Node;
 
 import java.util.List;
 

@@ -54,9 +54,10 @@ public final class StudentController implements DefenderController
 		}
 		*/
 		//Just testing, 2 interceptors, 2 kamikaze
+		// IMPLEMENT so because of the way goalie works, once we only have one pill left
 		actions[0] = ghost1(0);
 		actions[1] = ghost1(1);
-		actions[2] = suicide(2);
+		actions[2] = goalie(2);
 		actions[3] = suicide(3);
 
 		return actions;
@@ -118,13 +119,45 @@ public final class StudentController implements DefenderController
 		return 0;
 	}
 
-    public int ghost4()
+    public int goalie(int ghostID)
 	{
         /* FIXME blank method
         Goalie san should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
-        return 0;
+        Maze maze = game.getCurMaze();
+		List<Node> powerPillsLocation = maze.getPowerPillNodes();
+		int[] distances = new int[powerPillsLocation.size()];
+
+		// Evaluate the distances from pacman to all power pills on map
+		for(Node powerPill: powerPillsLocation){
+			for(int i = 0; i < powerPillsLocation.size(); i++){
+				distances[i] = attackerLocation.getPathDistance(powerPill);
+			}
+		}
+
+		// Find node for power pill second closest to Pacman
+		Node secondClosest = null;
+		Node firstClosest = null;
+		int secondSmallestDistance = Integer.MAX_VALUE;
+		int smallestDistance = Integer.MAX_VALUE;
+		for(int i = 0; i < distances.length; i++){
+			if(distances[i] < smallestDistance){
+				secondSmallestDistance = smallestDistance;
+				secondClosest = firstClosest;
+				smallestDistance = distances[i];
+				firstClosest = powerPillsLocation.get(i);
+			}
+			else if(distances[i] < secondSmallestDistance){
+				secondSmallestDistance = distances[i];
+				secondClosest = powerPillsLocation.get(i);
+			}
+		}
+
+		// Complete by having hover shortest circular path through node and if pacman begins approaching node change to
+		// attack pattern, like a goalie rushing a forward, perhaps implement this behavior via intercept in update method
+		Defender ghost = enemies.get(ghostID);
+        return ghost.getNextDir(secondClosest, true);
     }
 
 	public int suicide(int ghostID)

@@ -128,7 +128,7 @@ public final class StudentController implements DefenderController
          */
         Maze maze = game.getCurMaze();
 
-		List<Node> powerPillsLocation = maze.getPowerPillNodes();
+		List<Node> powerPillsLocation = game.getPowerPillList();
 		int[] distances = new int[powerPillsLocation.size()];
 
 		// Evaluate the distances from pacman to all power pills on map
@@ -163,7 +163,7 @@ public final class StudentController implements DefenderController
 		// Approach target power pill, if sufficiently close begin loop pattern
 		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
-		if (!(maze.getPowerPillNodes().size() > 1)){
+		if (!(powerPillsLocation.size() > 1)){
 			return interceptor(ghostID);
 		}
 		if (attacker.getLocation().getPathDistance(secondClosest) > 7){

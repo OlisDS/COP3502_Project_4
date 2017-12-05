@@ -2,8 +2,9 @@ package ufl.cs1.controllers;
 
 import game.controllers.DefenderController;
 import game.models.*;
-
 import java.util.LinkedList;
+import game.models.Maze;
+import game.models.Attacker;
 import java.util.List;
 
 public final class StudentController implements DefenderController
@@ -36,6 +37,9 @@ public final class StudentController implements DefenderController
 
 
 		int[] actions = new int[Game.NUM_DEFENDER];
+
+		List<Defender> enemies = game.getDefenders();
+
 		//Chooses a random LEGAL action if required. Could be much simpler by simply returning
 		//any random number of all of the ghosts
 		/*
@@ -91,7 +95,7 @@ public final class StudentController implements DefenderController
 	    	return ghost1.getNextDir(attackerLikelyTargetLocation, false);
 		else
 			return ghost1.getNextDir(attackerLocation, true);
-    }
+	}
 
     public int ghost2()
 	{
@@ -100,8 +104,9 @@ public final class StudentController implements DefenderController
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
 	     */
 
-        return 0;
-    }
+		return 0;
+	}
+
 
     public int ghost3()
 	{
@@ -110,8 +115,8 @@ public final class StudentController implements DefenderController
         should not be already covered by another ghost, determine based on last nodes in path
          */
 
-        return 0;
-    }
+		return 0;
+	}
 
     public int ghost4()
 	{

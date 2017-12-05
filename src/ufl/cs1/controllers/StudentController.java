@@ -54,11 +54,18 @@ public final class StudentController implements DefenderController
 		}
 		*/
 		//Just testing, 2 interceptors, 2 kamikaze
+<<<<<<< HEAD
 		// IMPLEMENT so because of the way goalie works, once we only have one pill left
 		actions[0] = ghost1(0);
 		actions[1] = ghost1(1);
 		actions[2] = goalie(2);
 		actions[3] = suicide(3);
+=======
+		actions[0] = interceptor(0);
+		actions[1] = interceptor(1);
+		actions[2] = kamikaze(2);
+		actions[3] = kamikaze(3);
+>>>>>>> 705914b72183b14de434d1ace27e9c84f739db98
 
 		return actions;
 	}
@@ -68,7 +75,7 @@ public final class StudentController implements DefenderController
 	Will need way for the ghosts to communicate, booleans paths etc.
 	 */
 
-	public int ghost1(int ghostID)
+	public int interceptor(int ghostID)
 	{
 	    /* FIXME, blank method for now.
 	    Intercepter-kun work off premise IF it can get between pacman and the pill he's going to get between the two on
@@ -76,32 +83,33 @@ public final class StudentController implements DefenderController
 	    to pacman's path but prioritize nodes later on in pacman's path (as he will be moving)
 	    ELSE should wait at safe distance (out of pacman's reach for when he gets the pill)
 	     */
-		Defender ghost1 = enemies.get(ghostID);
+		Defender ghost = enemies.get(ghostID);
 
 
 		//If the ghost stands between PacMan and his likely target, the ghost will target PacMan
-	    if (attackerLikelyPath.contains(ghost1.getLocation()))
-	    	return ghost1.getNextDir(attackerLocation, true);
+	    if (attackerLikelyPath.contains(ghost.getLocation()))
+	    	return ghost.getNextDir(attackerLocation, true);
 
 
-	    List<Node> pathToTarget = ghost1.getPathTo(attackerLikelyTargetLocation);
+	    List<Node> pathToTarget = ghost.getPathTo(attackerLikelyTargetLocation);
 
 	    //Sees if the ghost can intercept PacMan
 		//	if yes, the ghost contests the target
 		//	if not, the ghost simply chases PacMan
 		//	FIXME Interceptor needs to stop chasing PacMan once resistance is futile
 	    if (pathToTarget.size() < attackerLikelyPath.size())
-			return ghost1.getNextDir(attackerLikelyTargetLocation, true);
+			return ghost.getNextDir(attackerLikelyTargetLocation, true);
 		if (attackerLikelyPath.size() < 10)
-	    	return ghost1.getNextDir(attackerLikelyTargetLocation, false);
+	    	return ghost.getNextDir(attackerLikelyTargetLocation, false);
 		else
-			return ghost1.getNextDir(attackerLocation, true);
+			return ghost.getNextDir(attackerLocation, true);
 	}
 
-    public int ghost2()
+    public int stalker(int ghostID)
 	{
+		Defender ghost = enemies.get(ghostID);
 	    /* FIXME blank method for now.
-	    Stalker-kun should follow at a safe distance, if pacman gets near the pill and intercepter isn't on intercept path
+	    Stalker-san should follow at a safe distance, if pacman gets near the pill and intercepter isn't on intercept path
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
 	     */
 
@@ -109,8 +117,9 @@ public final class StudentController implements DefenderController
 	}
 
 
-    public int ghost3()
+    public int blocker(int ghostID)
 	{
+		Defender ghost = enemies.get(ghostID);
         /* FIXME blank method for now
         Blocker-chan should block off paths that would result in pacman getting superpill position, path blocked
         should not be already covered by another ghost, determine based on last nodes in path
@@ -121,8 +130,9 @@ public final class StudentController implements DefenderController
 
     public int goalie(int ghostID)
 	{
+		Defender ghost = enemies.get(ghostID);
         /* FIXME blank method
-        Goalie san should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
+        Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
         Maze maze = game.getCurMaze();
@@ -160,10 +170,7 @@ public final class StudentController implements DefenderController
         return ghost.getNextDir(secondClosest, true);
     }
 
-	public int suicide(int ghostID)
-	{
-		return enemies.get(ghostID).getNextDir(attackerLocation, true);
-	}
+	public int kamikaze(int ghostID) { return enemies.get(ghostID).getNextDir(attackerLocation, true);}
 
 	public void setAttackerLikelyTargetLocation(){
 		/*

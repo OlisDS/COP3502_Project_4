@@ -55,6 +55,11 @@ public final class StudentController implements DefenderController
 		*/
 		//Just testing, 2 interceptors, 2 kamikaze
 
+		actions[0] = interceptor(0);
+		actions[1] = interceptor(1);
+		actions[2] = goalie(2);
+		actions[3] = kamikaze(3);
+
 		return actions;
 	}
 
@@ -117,13 +122,60 @@ public final class StudentController implements DefenderController
 
     public int goalie(int ghostID)
 	{
-		Defender ghost = enemies.get(ghostID);
         /* FIXME blank method
         Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
-        return 0;
-    }
+        Maze maze = game.getCurMaze();
+
+		List<Node> powerPillsLocation = maze.getPowerPillNodes();
+		int[] distances = new int[powerPillsLocation.size()];
+
+		// Evaluate the distances from pacman to all power pills on map
+		for(Node powerPill: powerPillsLocation){
+			for(int i = 0; i < powerPillsLocation.size(); i++){
+				distances[i] = attackerLocation.getPathDistance(powerPill);
+			}
+		}
+
+		// Find nodes for power pills second closest and first closest to Pacman
+		Node secondClosest = null;
+		Node firstClosest = null;
+		int secondSmallestDistance = Integer.MAX_VALUE;
+		int smallestDistance = Integer.MAX_VALUE;
+		for(int i = 0; i < distances.length; i++){
+			if(distances[i] < smallestDistance){
+				secondSmallestDistance = smallestDistance;
+				secondClosest = firstClosest;
+				smallestDistance = distances[i];
+				firstClosest = powerPillsLocation.get(i);
+			}
+			else if(distances[i] < secondSmallestDistance){
+				secondSmallestDistance = distances[i];
+				secondClosest = powerPillsLocation.get(i);
+			}
+		}
+
+		// Complete by having hover shortest circular path through node and if pacman begins approaching node change to
+		// attack pattern, like a goalie rushing a forward, perhaps implement this behavior via intercept in update method
+		// FIXME Have circle around going through multiple times.
+		// Come up with contingency for when no power pills left, roam and run away?
+		// Approach target power pill, if sufficiently close begin loop pattern
+		// If pacman is close then attack him
+		Defender ghost = enemies.get(ghostID);
+		if (!(maze.getPowerPillNodes().size() > 1)){
+			return interceptor(ghostID);
+		}
+		if (attacker.getLocation().getPathDistance(secondClosest) > 7){
+			return ghost.getNextDir(secondClosest, true);
+		}
+		else if(attacker.getLocation().getPathDistance(secondClosest) < ghost.getLocation().getPathDistance(secondClosest)) {
+			return ghost.getNextDir(attacker.getLocation(), true);
+		}
+		else{
+			return ghost.getNextDir(attacker.getLocation(), false);
+		}
+	}
 
 	public int kamikaze(int ghostID) {
 		// FIXME Kamikaze needs to only trigger PacMan's Holding Pattern when the other defenders are at a safe distance

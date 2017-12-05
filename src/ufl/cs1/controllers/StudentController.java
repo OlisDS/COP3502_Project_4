@@ -54,10 +54,6 @@ public final class StudentController implements DefenderController
 		}
 		*/
 		//Just testing, 2 interceptors, 2 kamikaze
-		actions[0] = interceptor(0);
-		actions[1] = interceptor(1);
-		actions[2] = kamikaze(2);
-		actions[3] = kamikaze(3);
 
 		return actions;
 	}
@@ -76,6 +72,7 @@ public final class StudentController implements DefenderController
 	    ELSE should wait at safe distance (out of pacman's reach for when he gets the pill)
 	     */
 		Defender ghost = enemies.get(ghostID);
+		if (ghost == null) return 0;
 
 
 		//If the ghost stands between PacMan and his likely target, the ghost will target PacMan
@@ -88,11 +85,9 @@ public final class StudentController implements DefenderController
 	    //Sees if the ghost can intercept PacMan
 		//	if yes, the ghost contests the target
 		//	if not, the ghost simply chases PacMan
-		//	FIXME Interceptor needs to stop chasing PacMan once resistance is futile
 	    if (pathToTarget.size() < attackerLikelyPath.size())
 			return ghost.getNextDir(attackerLikelyTargetLocation, true);
-		if (attackerLikelyPath.size() < 10)
-	    	return ghost.getNextDir(attackerLikelyTargetLocation, false);
+	    if (attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, false);
 		else
 			return ghost.getNextDir(attackerLocation, true);
 	}
@@ -130,7 +125,17 @@ public final class StudentController implements DefenderController
         return 0;
     }
 
-	public int kamikaze(int ghostID) { return enemies.get(ghostID).getNextDir(attackerLocation, true);}
+	public int kamikaze(int ghostID) {
+		// FIXME Kamikaze needs to only trigger PacMan's Holding Pattern when the other defenders are at a safe distance
+		return enemies.get(ghostID).getNextDir(attackerLocation, true);
+	}
+
+	//FIXME for debugging purposes to test the attackerIsHoldingPattern(). Ghosts run away until Attacker is in holding pattern.
+	public int suicideLOL(int ghostID){
+		Defender ghost = enemies.get(ghostID);
+		if (attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
+		else return ghost.getNextDir(attackerLocation, false);
+	}
 
 	public void setAttackerLikelyTargetLocation(){
 		/*
@@ -148,5 +153,10 @@ public final class StudentController implements DefenderController
 			attackerLikelyTargetLocation = attacker.getTargetNode(powerPills, true);
 		else
 			attackerLikelyTargetLocation = attacker.getTargetNode(game.getPillList(), true);
+	}
+
+	//FIXME this method below needs to tell if PacMan is in holding pattern.
+	public boolean attackerIsHoldingPattern(){
+		return false;
 	}
 }

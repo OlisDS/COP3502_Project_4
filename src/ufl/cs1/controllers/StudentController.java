@@ -123,12 +123,12 @@ public final class StudentController implements DefenderController
 
     public int goalie(int ghostID)
 	{
-
         /* FIXME blank method
         Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
         Maze maze = game.getCurMaze();
+
 		List<Node> powerPillsLocation = maze.getPowerPillNodes();
 		int[] distances = new int[powerPillsLocation.size()];
 
@@ -139,7 +139,7 @@ public final class StudentController implements DefenderController
 			}
 		}
 
-		// Find node for power pill second closest to Pacman
+		// Find nodes for power pills second closest and first closest to Pacman
 		Node secondClosest = null;
 		Node firstClosest = null;
 		int secondSmallestDistance = Integer.MAX_VALUE;
@@ -159,9 +159,24 @@ public final class StudentController implements DefenderController
 
 		// Complete by having hover shortest circular path through node and if pacman begins approaching node change to
 		// attack pattern, like a goalie rushing a forward, perhaps implement this behavior via intercept in update method
+		// FIXME Have circle around going through multiple times.
+		// Come up with contingency for when no power pills left, roam and run away?
+		// Approach target power pill, if sufficiently close begin loop pattern
+		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
-        return ghost.getNextDir(secondClosest, true);
-    }
+		if (!(maze.getPowerPillNodes().size() > 1)){
+			return interceptor(ghostID);
+		}
+		if (attacker.getLocation().getPathDistance(secondClosest) > 7){
+			return ghost.getNextDir(secondClosest, true);
+		}
+		else if(attacker.getLocation().getPathDistance(secondClosest) < ghost.getLocation().getPathDistance(secondClosest)) {
+			return ghost.getNextDir(attacker.getLocation(), true);
+		}
+		else{
+			return ghost.getNextDir(attacker.getLocation(), false);
+		}
+	}
 
 	public int kamikaze(int ghostID) { return enemies.get(ghostID).getNextDir(attackerLocation, true);}
 

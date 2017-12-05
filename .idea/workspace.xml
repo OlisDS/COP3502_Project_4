@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f93a5615-1996-447b-b12e-b95e14866fc7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/System/game/system/Random.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/System/game/models/Game.java" afterPath="$PROJECT_DIR$/System/game/models/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" afterPath="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" />
-=======
-<<<<<<< HEAD
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" afterPath="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" />
-=======
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
     </list>
     <ignored path="Ms. Pac-Man.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,117 +21,16 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="StudentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="284">
-              <caret line="134" column="20" lean-forward="false" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
-              <folding>
-                <element signature="e#4229#4230#0" expanded="true" />
-                <element signature="e#4298#4299#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/models/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-677">
-              <caret line="19" column="86" lean-forward="false" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_Defender.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/system/_Defender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-=======
-<<<<<<< HEAD
-            <state relative-caret-position="525">
-              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="407">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-=======
-            <state relative-caret-position="1088">
-              <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
-              <folding />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_Random.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/system/_Random.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Replay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/view/Replay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1289">
-              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/view/GameView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3723">
-              <caret line="248" column="10" lean-forward="false" selection-start-line="248" selection-start-column="10" selection-end-line="248" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Defender.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/models/Defender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefenderController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System/game/controllers/DefenderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="konachan_candy7 copy.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/PycharmProjects/untitled/BeginningWithPython/konachan_candy7 copy.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -257,11 +151,11 @@
         <option value="$PROJECT_DIR$/System/game/controllers/examples/Legacy2TheReckoning.java" />
         <option value="$PROJECT_DIR$/System/game/controllers/examples/Legacy.java" />
         <option value="$PROJECT_DIR$/System/game/Exec.java" />
+        <option value="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" />
         <option value="$PROJECT_DIR$/System/game/system/_Game.java" />
         <option value="$PROJECT_DIR$/System/game/system/_Random.java" />
         <option value="$PROJECT_DIR$/System/game/system/Random.java" />
         <option value="$PROJECT_DIR$/System/game/models/Game.java" />
-        <option value="$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java" />
       </list>
     </option>
   </component>
@@ -271,24 +165,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-<<<<<<< HEAD
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="41" />
-    <option name="y" value="22" />
-=======
-<<<<<<< HEAD
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="765" />
-    <option name="width" value="675" />
-    <option name="height" value="900" />
-=======
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="339" />
+    <option name="y" value="119" />
+    <option name="width" value="3176" />
+    <option name="height" value="1696" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -306,47 +187,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-=======
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
-      <pane id="AndroidView" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-<<<<<<< HEAD
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-=======
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="pakupaku-benchmark.jar" type="ab9368bb:PsiFileNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="pakupaku-benchmark.jar" type="ab9368bb:PsiFileNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="pakupaku-benchmark.jar" type="ab9368bb:PsiFileNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
@@ -354,73 +224,59 @@
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pakupaku-benchmark.jar" type="ab9368bb:PsiFileNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="System" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="System" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="System" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
+              <item name="gatorraider" type="462c0819:PsiDirectoryNode" />
               <item name="System" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="system" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COP3502_Project_4" type="462c0819:PsiDirectoryNode" />
-              <item name="System" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="PakuPaku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
-<<<<<<< HEAD
-      <pane id="AndroidView" />
-=======
-<<<<<<< HEAD
-=======
-      <pane id="Scope" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,7 +284,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/pakupaku-benchmark.jar!/" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
@@ -464,7 +320,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestAgent - Scored">
+  <component name="RunManager" selected="Application.Example - Debug">
+    <configuration name="Example - Debug" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="game.Exec" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-debugexample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/exec" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PakuPaku" />
+      <envs />
+    </configuration>
     <configuration name="Example - Scored" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="game.Exec" />
@@ -484,6 +354,20 @@
       <option name="MAIN_CLASS_NAME" value="game.Exec" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="-visualexample" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/exec" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="PakuPaku" />
+      <envs />
+    </configuration>
+    <configuration name="TestAgent - Debug" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="game.Exec" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-debugstudent" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/exec" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -541,6 +425,57 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Ms. Pac-Man" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Ms. Pac-Man" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Ms. Pac-Man" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -573,11 +508,42 @@
       <module name="Ms. Pac-Man" />
       <envs />
     </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Ms. Pac-Man" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Ms. Pac-Man" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -612,6 +578,18 @@
       <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="Ms. Pac-Man" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
@@ -654,25 +632,6 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Ms. Pac-Man" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -694,81 +653,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Ms. Pac-Man" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Ms. Pac-Man" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Ms. Pac-Man" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <module name="Ms. Pac-Man" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Ms. Pac-Man" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -863,17 +747,14 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <list size="4">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.TestAgent - Visual" />
       <item index="1" class="java.lang.String" itemvalue="Application.Example - Visual" />
       <item index="2" class="java.lang.String" itemvalue="Application.TestAgent - Scored" />
       <item index="3" class="java.lang.String" itemvalue="Application.Example - Scored" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Example - Debug" />
+      <item index="5" class="java.lang.String" itemvalue="Application.TestAgent - Debug" />
     </list>
-  </component>
-  <component name="SbtLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -938,108 +819,51 @@
       <workItem from="1512078786425" duration="893000" />
       <workItem from="1512082533212" duration="845000" />
       <workItem from="1512151852267" duration="1567000" />
-      <workItem from="1512178014356" duration="3304000" />
-<<<<<<< HEAD
-      <workItem from="1512332737147" duration="12000" />
-      <workItem from="1512337863590" duration="1311000" />
-      <workItem from="1512340221284" duration="6974000" />
-      <workItem from="1512407975956" duration="483000" />
-      <workItem from="1512417279807" duration="17000" />
-      <workItem from="1512417356245" duration="4000" />
-      <workItem from="1512417384438" duration="162000" />
-      <workItem from="1512418002059" duration="1844000" />
-=======
-      <workItem from="1512317197579" duration="1538000" />
-      <workItem from="1512418453648" duration="1160000" />
-<<<<<<< HEAD
-      <workItem from="1512420484714" duration="5161000" />
-=======
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+      <workItem from="1512178014356" duration="6948000" />
+      <workItem from="1512263106437" duration="962000" />
+      <workItem from="1512265828028" duration="2467000" />
+      <workItem from="1512320644642" duration="1847000" />
+      <workItem from="1512330512978" duration="1236000" />
+      <workItem from="1512341898271" duration="598000" />
+      <workItem from="1512352311154" duration="2099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="145285000" />
+    <option name="totallyTimeSpent" value="148849000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
-=======
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="146803000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="630" y="0" width="810" height="900" extended-state="0" />
-    <editor active="true" />
-=======
-    <option name="totallyTimeSpent" value="140124000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+    <frame x="429" y="147" width="2822" height="1399" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33736396" sideWeight="0.43629086" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3370307" sideWeight="0.43629086" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.503367" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38452238" sideWeight="0.496633" order="2" side_tool="false" content_ui="tabs" />
-=======
-<<<<<<< HEAD
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39647058" sideWeight="0.496633" order="2" side_tool="false" content_ui="tabs" />
-=======
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27730376" sideWeight="0.496633" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19599427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.039506175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20499243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24337867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44740024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4486045" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5882353" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33647057" sideWeight="0.43629086" order="11" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33764467" sideWeight="0.43629086" order="11" side_tool="false" content_ui="tabs" />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2607216" sideWeight="0.49353796" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33422938" sideWeight="0.49353796" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1107,7 +931,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="39" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1128,12 +952,50 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-=======
-    <entry file="file://$PROJECT_DIR$/src/pakupaku/agent/TestAgent.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/launcher/LauncherHelper.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Launcher.class" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
+    <entry file="file://$PROJECT_DIR$/System/game/system/_Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="117" column="32" lean-forward="false" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/system/_ReplayGame_.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5143">
+          <caret line="161" column="24" lean-forward="true" selection-start-line="161" selection-start-column="24" selection-end-line="161" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/Exec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="132" column="44" lean-forward="true" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Launcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/Human.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -1143,6 +1005,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/RandomAttacker.java" />
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/RandomNonRevAttacker.java" />
+    <entry file="file://$PROJECT_DIR$/System/game/view/Replay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/controllers/DefenderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/system/_Maze.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1159,19 +1035,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/Devastator.java" />
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/OriginalDefenders.java" />
-    <entry file="file://$PROJECT_DIR$/System/game/models/Maze.java">
+    <entry file="file://$PROJECT_DIR$/System/game/view/GameView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="4326">
+          <caret line="248" column="10" lean-forward="false" selection-start-line="248" selection-start-column="10" selection-end-line="248" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/NearestPillAttackerVS.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/invoke/MethodHandleNatives.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/invoke/MemberName.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Class.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/FileInputStream.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="3180" column="0" lean-forward="false" selection-start-line="3180" selection-start-column="0" selection-end-line="3180" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/invoke/MethodHandleNatives.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/invoke/MemberName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="1004" column="0" lean-forward="false" selection-start-line="1004" selection-start-column="0" selection-end-line="1004" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="2129" column="0" lean-forward="false" selection-start-line="2129" selection-start-column="0" selection-end-line="2129" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="186" column="24" lean-forward="false" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/NearestPillAttacker.java" />
     <entry file="file://$PROJECT_DIR$/System/game/models/Attacker.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1201,9 +1107,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/ClassLoader.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/URLClassPath.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/security/AccessController.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="435" column="0" lean-forward="false" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="664" column="0" lean-forward="false" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/security/AccessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="651" column="8" lean-forward="false" selection-start-line="651" selection-start-column="8" selection-end-line="651" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/system/DuoMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1218,8 +1142,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/net/URLClassLoader.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="555" column="0" lean-forward="false" selection-start-line="555" selection-start-column="0" selection-end-line="555" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/RandomDefenders.java" />
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/AttractRepelGhosts.java" />
     <entry file="file://$PROJECT_DIR$/System/game/controllers/examples/Legacy2TheReckoning.java" />
@@ -1246,6 +1182,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/models/Defender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/system/_Defender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="898">
+          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System/game/system/_Actor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1665">
@@ -1262,127 +1212,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/System/game/Exec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-<<<<<<< HEAD
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Random.java" />
-    <entry file="file://$PROJECT_DIR$/System/game/system/Random.java" />
-    <entry file="file://$PROJECT_DIR$/System/game/models/Game.java">
-=======
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Random.java" />
-    <entry file="file://$PROJECT_DIR$/System/game/system/Random.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="93" lean-forward="true" selection-start-line="3" selection-start-column="93" selection-end-line="3" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/untitled/BeginningWithPython/konachan_candy7 copy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/models/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-677">
-          <caret line="19" column="86" lean-forward="false" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/System/game/models/Defender.java">
-=======
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/controllers/DefenderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/system/_Defender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/system/_Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/view/Replay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1289">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System/game/view/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3723">
-          <caret line="248" column="10" lean-forward="false" selection-start-line="248" selection-start-column="10" selection-end-line="248" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="525">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="468">
+          <caret line="132" column="44" lean-forward="true" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-=======
-        <state relative-caret-position="1088">
-          <caret line="68" column="29" lean-forward="true" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
->>>>>>> 1df453972c7f165b9bd17acf96f4f97be064f471
-          <folding />
->>>>>>> b597e04ad28367c60e5567c074abe0965d152137
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System/game/system/Random.java" />
+    <entry file="file://$PROJECT_DIR$/System/game/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="19" column="86" lean-forward="false" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ufl/cs1/controllers/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="134" column="20" lean-forward="false" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+        <state relative-caret-position="407">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#4229#4230#0" expanded="true" />
-            <element signature="e#4298#4299#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

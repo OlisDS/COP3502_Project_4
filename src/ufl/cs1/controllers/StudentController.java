@@ -54,18 +54,11 @@ public final class StudentController implements DefenderController
 		}
 		*/
 		//Just testing, 2 interceptors, 2 kamikaze
-<<<<<<< HEAD
-		// IMPLEMENT so because of the way goalie works, once we only have one pill left
-		actions[0] = ghost1(0);
-		actions[1] = ghost1(1);
-		actions[2] = goalie(2);
-		actions[3] = suicide(3);
-=======
+
 		actions[0] = interceptor(0);
 		actions[1] = interceptor(1);
-		actions[2] = kamikaze(2);
+		actions[2] = goalie(2);
 		actions[3] = kamikaze(3);
->>>>>>> 705914b72183b14de434d1ace27e9c84f739db98
 
 		return actions;
 	}
@@ -130,7 +123,7 @@ public final class StudentController implements DefenderController
 
     public int goalie(int ghostID)
 	{
-		Defender ghost = enemies.get(ghostID);
+
         /* FIXME blank method
         Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman

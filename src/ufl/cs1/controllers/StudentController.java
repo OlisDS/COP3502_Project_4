@@ -53,8 +53,8 @@ public final class StudentController implements DefenderController
 				actions[i] = -1;
 		}
 		*/
-		//Just testing, 2 interceptors, 2 kamikaze
 
+		//Just testing, not final
 		actions[0] = interceptor(0);
 		actions[1] = interceptor(1);
 		actions[2] = goalie(2);

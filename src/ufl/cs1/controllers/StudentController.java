@@ -66,7 +66,7 @@ public final class StudentController implements DefenderController
 		*/
 
 		actions[0] = interceptor(0);
-		actions[1] = interceptor(1);
+		actions[1] = stalker(1);
 		actions[2] = goalie(2);
 		actions[3] = kamikaze(3);
 
@@ -131,42 +131,56 @@ public final class StudentController implements DefenderController
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
 	     */
 
-	//	List<Node> powerPillLocations = powerPills;
 
-		//Calculates distance from ghost to each powerpill and pacman to each powerpill
+		//Calculates distance from each ghost to pacman
 		int[] ghostsToAttDist = new int[3];
 		for(int i = 0; i < ghostsToAttDist.length; i++)
-			ghostsToAttDist[i] = game.getDefender(i).getLocation().getPathDistance(attackerLocation);
-
-		//Makes the ghost trigger pacman to eat power pill when it stays on top of the pill but waits until other
-		// ghosts are at a safe distance
-		if(attacker.getLocation() == powerPills && ghostsToAttDist[0] > 10)
-			return ghost.getNextDir(attackerLocation, true);
-		else if(attackerLocation == powerPills && ghostsToAttDist[0] <= 10)
-			return ghost.getNextDir(attackerLocation, false);
-	/*q
-		Node closestPowerPill = null;
-		for(int i = 0; i < powerPillLocations.size(); i++) {
-			if (powerPills.get(i) == null)
+			if(enemies.get(i) == ghost)
 				continue;
 			else
-				closestPowerPill = powerPillLocations.get(i);
+				ghostsToAttDist[i] = enemies.get(i).getLocation().getPathDistance(attackerLocation);
+
+
+		boolean safeToRushTheAttacker = true;
+		boolean ghostInRange = true;
+
+		//Used to determine if the other ghosts are out of range of pacman before triggering him
+		final int SAFETY_MARGIN_FOR_OTHER_GHOST = 50;
+		for (Defender d : enemies){
+			if (d == ghost)
+				continue;
+			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOST && !powerPills.isEmpty())
+				safeToRushTheAttacker = false;
+		}
+		//Used to determine if the ghost should chase pacman depending on if other ghosts are chasing him
+		for(Defender d : enemies){
+			if(d.getLocation().getPathDistance(attackerLocation) >= 35)
+				ghostInRange = false;
 		}
 
-		for(int i = 0; i < powerPills.size() - 1; i++) {
-			if(attacker.getLocation().getPathDistance(powerPills.get(i + 1)) < attacker.getLocation().getPathDistance(closestPowerPill))
-				closestPowerPill = powerPills.get(i + 1);
+		//Makes the ghost trigger pacman to eat power pill when it stays on top of the pill but waits until other
+		//ghosts are at a safe distance
+		//If another ghost is chasing pacman and pacman isn't at a Power Pill, then it also chases
+		if(attacker.getLocation() == powerPills ) {
+			if (safeToRushTheAttacker)
+				return ghost.getNextDir(attackerLocation, true);
+			else{
+				if(ghost.getLocation().getPathDistance(attacker.getLocation()) > 35)
+					return ghost.getNextDir(attackerLocation, true);
+				else
+					return ghost.getNextDir(attackerLocation, false);
+			}
 		}
-
-		//Compares distance from closest power pill to ghost and the distance from closest pwoer pill to attacker
-		if(closestPowerPill != null) {
-			if (ghost.getLocation().getPathDistance(closestPowerPill) <= attacker.getLocation().getPathDistance(closestPowerPill))
-				return ghost.getNextDir(powerPillLocations.get(0), true);
-			else
-				return ghost.getNextDir(attacker.getLocation(), true);
+		else{
+			if(ghostInRange)
+				return ghost.getNextDir(attackerLocation, true);
+			else {
+				if (ghost.getLocation().getPathDistance(attacker.getLocation()) > 35)
+					return ghost.getNextDir(attackerLocation, true);
+				else
+					return ghost.getNextDir(attackerLocation, false);
+			}
 		}
-	*/
-		return ghost.getNextDir(attackerLocation, true);
 	}
 
 

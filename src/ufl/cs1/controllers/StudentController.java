@@ -205,8 +205,12 @@ public final class StudentController implements DefenderController
          */
         Maze maze = game.getCurMaze();
 
+<<<<<<< HEAD
         //fixme? game.getPowerPillList() is already assigned to static powerPills?
 		List<Node> powerPillsLocation = game.getPowerPillList();
+=======
+		List<Node> powerPillsLocation = maze.getPowerPillNodes();
+>>>>>>> parent of 6aca5f7... Merge branch 'master' of https://github.com/OlisDS/COP3502_Project_4
 		int[] distances = new int[powerPillsLocation.size()];
 
 		// Evaluate the distances from pacman to all power pills on map
@@ -241,8 +245,12 @@ public final class StudentController implements DefenderController
 		// Approach target power pill, if sufficiently close begin loop pattern
 		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
+<<<<<<< HEAD
 		//fixme? can be replaced with powerPillsLocation.isEmpty()?
 		if (!(powerPillsLocation.size() > 1)){
+=======
+		if (!(maze.getPowerPillNodes().size() > 1)){
+>>>>>>> parent of 6aca5f7... Merge branch 'master' of https://github.com/OlisDS/COP3502_Project_4
 			return interceptor(ghostID);
 		}
 		if (attacker.getLocation().getPathDistance(secondClosest) > 7){

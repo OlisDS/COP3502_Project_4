@@ -68,7 +68,7 @@ public final class StudentController implements DefenderController
 		*/
 
 		actions[0] = interceptor(0);
-		actions[1] = stalker(1);
+		actions[1] = interceptor(1);
 		actions[2] = goalie(2);
 		actions[3] = kamikaze(3);
 
@@ -196,7 +196,6 @@ public final class StudentController implements DefenderController
          */
         Maze maze = game.getCurMaze();
 
-
         //fixme? game.getPowerPillList() is already assigned to static powerPills?
 		List<Node> powerPillsLocation = game.getPowerPillList();
 		int[] distances = new int[powerPillsLocation.size()];
@@ -233,7 +232,12 @@ public final class StudentController implements DefenderController
 		// Approach target power pill, if sufficiently close begin loop pattern
 		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
-		//fixme? can be replaced with powerPillsLocation.isEmpty()?
+
+		//	if pacman is chasing the goalie's pill, the goalie reads that it is in PacMan's likely path and proceeds to chase PacMan
+		//	until it is not in PacMan's path
+		if (attackerLikelyPath.contains(ghost.getLocation()))
+			return ghost.getNextDir(attackerLocation, true);
+
 		if (!(powerPillsLocation.size() > 1)){
 			return interceptor(ghostID);
 		}

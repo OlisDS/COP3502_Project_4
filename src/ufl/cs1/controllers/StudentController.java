@@ -199,7 +199,7 @@ public final class StudentController implements DefenderController
 		if (safeToRushTheAttacker) return enemies.get(ghostID).getNextDir(attackerLocation, true);
 
 		//Stay 15 units away from pacman
-		if (ghost.getLocation().getPathDistance(attackerLocation) >= 25) return enemies.get(ghostID).getNextDir(attackerLocation, true);
+		if (ghost.getLocation().getPathDistance(attackerLocation) >= 50) return enemies.get(ghostID).getNextDir(attackerLocation, true);
 		else return enemies.get(ghostID).getNextDir(attackerLocation, false);
 	}
 

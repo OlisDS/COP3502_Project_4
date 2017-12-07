@@ -11,6 +11,8 @@ public final class StudentController implements DefenderController
 {
 	public void init(Game game) { }
 
+	//omg the code broke
+
 	public void shutdown(Game game) { }
 
 	//Store commonly needed variables here as static variables to avoid excessive method calling and memory overflow

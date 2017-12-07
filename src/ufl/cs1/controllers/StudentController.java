@@ -131,7 +131,42 @@ public final class StudentController implements DefenderController
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
 	     */
 
-		return 0;
+	//	List<Node> powerPillLocations = powerPills;
+
+		//Calculates distance from ghost to each powerpill and pacman to each powerpill
+		int[] ghostsToAttDist = new int[3];
+		for(int i = 0; i < ghostsToAttDist.length; i++)
+			ghostsToAttDist[i] = game.getDefender(i).getLocation().getPathDistance(attackerLocation);
+
+		//Makes the ghost trigger pacman to eat power pill when it stays on top of the pill but waits until other
+		// ghosts are at a safe distance
+		if(attacker.getLocation() == powerPills && ghostsToAttDist[0] > 10)
+			return ghost.getNextDir(attackerLocation, true);
+		else if(attackerLocation == powerPills && ghostsToAttDist[0] <= 10)
+			return ghost.getNextDir(attackerLocation, false);
+	/*q
+		Node closestPowerPill = null;
+		for(int i = 0; i < powerPillLocations.size(); i++) {
+			if (powerPills.get(i) == null)
+				continue;
+			else
+				closestPowerPill = powerPillLocations.get(i);
+		}
+
+		for(int i = 0; i < powerPills.size() - 1; i++) {
+			if(attacker.getLocation().getPathDistance(powerPills.get(i + 1)) < attacker.getLocation().getPathDistance(closestPowerPill))
+				closestPowerPill = powerPills.get(i + 1);
+		}
+
+		//Compares distance from closest power pill to ghost and the distance from closest pwoer pill to attacker
+		if(closestPowerPill != null) {
+			if (ghost.getLocation().getPathDistance(closestPowerPill) <= attacker.getLocation().getPathDistance(closestPowerPill))
+				return ghost.getNextDir(powerPillLocations.get(0), true);
+			else
+				return ghost.getNextDir(attacker.getLocation(), true);
+		}
+	*/
+		return ghost.getNextDir(attackerLocation, true);
 	}
 
 

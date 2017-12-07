@@ -22,6 +22,8 @@ public final class StudentController implements DefenderController
 	static Attacker attacker;
 	static List<Node> attackerLikelyPath;
 
+	static List<Integer> unassignedDefenderIDs;
+
 	public int[] update(Game game2,long timeDue)
 	{
 		//Assign values to static members here
@@ -34,27 +36,32 @@ public final class StudentController implements DefenderController
 		setAttackerLikelyTargetLocation();
 		attackerLikelyPath = attacker.getPathTo(attackerLikelyTargetLocation);
 
+		//unassignedDefenderIDs holds all the ghost IDs that have not been assigned roles
+		unassignedDefenderIDs = new LinkedList<>();
+		for (int i = 0; i < 4; i++) unassignedDefenderIDs.add(i);
 
 
 		int[] actions = new int[Game.NUM_DEFENDER];
 
-		List<Defender> enemies = game.getDefenders();
-
-		//Chooses a random LEGAL action if required. Could be much simpler by simply returning
-		//any random number of all of the ghosts
 		/*
-		for(int i = 0; i < actions.length; i++)
-		{
-			Defender defender = enemies.get(i);
-			List<Integer> possibleDirs = defender.getPossibleDirs();
-			if (possibleDirs.size() != 0)
-				actions[i]=possibleDirs.get(Game.rng.nextInt(possibleDirs.size()));
-			else
-				actions[i] = -1;
-		}
+		fixme. Commented below is how we might implement a dynamic role-assignment model
+		int interceptorID = chooseInterceptor();
+		actions[interceptorID] = interceptor(interceptorID);
+		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(interceptorID));
+
+		int stalkerID = chooseStalker();
+		actions[stalkerID] = stalker(stalkerID);
+		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(stalkerID));
+
+		int blockerID = chooseBlocker();
+		actions[blockerID] = blocker(blockerID);
+		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(blockerID));
+
+		int goalieID = chooseGoalie();
+		actions[goalieID] = goalie(goalieID);
+		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(goalieID));
 		*/
 
-		//Just testing, not final
 		actions[0] = interceptor(0);
 		actions[1] = interceptor(1);
 		actions[2] = goalie(2);
@@ -63,37 +70,50 @@ public final class StudentController implements DefenderController
 		return actions;
 	}
 
-	/* Behavior will be implemented dynamically, i.e. when we update we will assign roles (who gets what method)
+	/* FIXME Behavior will be implemented dynamically, i.e. when we update we will assign roles (who gets what method)
 	based on current game states like who's in the best position to intercept, follow, etc.
 	Will need way for the ghosts to communicate, booleans paths etc.
 	 */
 
+	//fixme. Each method below should decide the best ghost for the role. Available ghosts are from unassignedDefenderIDs list
+	private int chooseInterceptor() { return -1; }
+	private int chooseStalker(){return -1;}
+	private int chooseBlocker(){return -1;}
+	private int chooseGoalie(){return -1;}
+
+
 	public int interceptor(int ghostID)
 	{
-	    /* FIXME, blank method for now.
+	    /* Original idea:
 	    Intercepter-kun work off premise IF it can get between pacman and the pill he's going to get between the two on
 	    pacman's current/predicted path (shortest), the best way of doing this would be to figure out the shortest path
 	    to pacman's path but prioritize nodes later on in pacman's path (as he will be moving)
 	    ELSE should wait at safe distance (out of pacman's reach for when he gets the pill)
 	     */
+
+	    /* Actual implementation:
+	    Interceptor sets its target Node to PacMan's target Node. Checks to see if it can intercept the target
+	    	if can intercept, Interceptor intercepts
+	    	if can't intercept, Interceptor just stalks PacMan
+	    if Interceptor stands between PacMan and the target, Interceptor charges at PacMan
+	     */
 		Defender ghost = enemies.get(ghostID);
 		if (ghost == null) return 0;
-		if (ghost.isVulnerable()) return flee(ghostID);
+		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
 
 
-		//If the ghost stands between PacMan and his likely target, the ghost will target PacMan
+		//	If the ghost stands between PacMan and his likely target, the ghost will target PacMan
 	    if (attackerLikelyPath.contains(ghost.getLocation()))
 	    	return ghost.getNextDir(attackerLocation, true);
 
 
 	    List<Node> pathToTarget = ghost.getPathTo(attackerLikelyTargetLocation);
 
-	    //Sees if the ghost can intercept PacMan
-		//	if yes, the ghost contests the target
-		//	if not, the ghost simply chases PacMan
+	    //	Sees if the ghost can intercept PacMan
+		//		if yes, the ghost contests the target
+		//		if not, the ghost simply chases PacMan
 	    if (pathToTarget.size() < attackerLikelyPath.size())
 			return ghost.getNextDir(attackerLikelyTargetLocation, true);
-	    if (attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, false);
 		else
 			return ghost.getNextDir(attackerLocation, true);
 	}
@@ -115,7 +135,7 @@ public final class StudentController implements DefenderController
     public int blocker(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
-		if (ghost.isVulnerable()) return flee(ghostID);
+		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
 
         /* FIXME blank method for now
         Blocker-chan should block off paths that would result in pacman getting superpill position, path blocked
@@ -127,7 +147,7 @@ public final class StudentController implements DefenderController
 
     public int goalie(int ghostID)
 	{
-        /* FIXME blank method
+        /*
         Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
@@ -184,33 +204,34 @@ public final class StudentController implements DefenderController
 
 	public int kamikaze(int ghostID)
 	{
-		// FIXME Kamikaze needs to only trigger PacMan's Holding Pattern when the other defenders are at a safe distance
-
+		//	Kamikaze (not one of our final ghosts) charges blindly at Pac Man until Pac Man reaches a Power Pill.
+		//	Kamikaze waits outside of Pac Man's trigger range until the other ghosts are out of PacMan's reach
+		//	Kamikaze rushes Pac Man and gets eaten immediately. and respawns to protect the other ghosts
 		Defender ghost = enemies.get(ghostID);
 		if (!attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
 
 		boolean safeToRushTheAttacker = true;
 
+		//	if a ghost (other than Kamikaze) is too close to PacMan, not safe
 		for (Defender d : enemies){
 			if (d == ghost) continue; //excluding the kamikaze ghost
 			if (d.getLocation().getPathDistance(attackerLocation) <= 50 && !powerPills.isEmpty()) safeToRushTheAttacker = false;
 		}
 
-		if (safeToRushTheAttacker) return enemies.get(ghostID).getNextDir(attackerLocation, true);
+		//	if other ghosts are safe distance, rush PacMan
+		if (safeToRushTheAttacker) return ghost.getNextDir(attackerLocation, true);
 
-		//Stay 15 units away from pacman
-		if (ghost.getLocation().getPathDistance(attackerLocation) >= 50) return enemies.get(ghostID).getNextDir(attackerLocation, true);
-		else return enemies.get(ghostID).getNextDir(attackerLocation, false);
+		//	if other ghosts are not safe distance, hold off on rushing PacMan
+		if (ghost.getLocation().getPathDistance(attackerLocation) >= 50) return ghost.getNextDir(attackerLocation, true);
+		else return ghost.getNextDir(attackerLocation, false);
 	}
 
 	public void setAttackerLikelyTargetLocation()
 	{
-		/*
-		Predicts PacMan's target location depending on these priorities:
-			1.	Vulnerable ghosts
-			2.	Power pills
-			3.	Pill
-		 */
+		//	Predicts PacMan's target location depending on these priorities:
+		//		1.	Vulnerable ghosts
+		//		2.	Power pills
+		//		3.	Pill
 		List<Node> vulnerableDefenderLocations = new LinkedList<>();
 		for (Defender d : enemies) if (d.isVulnerable()) vulnerableDefenderLocations.add(d.getLocation());
 
@@ -222,13 +243,14 @@ public final class StudentController implements DefenderController
 			attackerLikelyTargetLocation = attacker.getTargetNode(game.getPillList(), true);
 	}
 
-	//Sees if PacMan is dangerously close to the Power Pill
+	//	Sees if PacMan is dangerously close to the Power Pill
 	public boolean attackerIsHoldingPattern()
 	{
 		if (powerPills.isEmpty()) return false;
 		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= 20;
 	}
 
+	//	For when ghost is vulnerable
 	public int flee(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);

@@ -45,7 +45,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8.0_144" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="true" project-jdk-name="9.0" project-jdk-type="JavaSDK">
+>>>>>>> 935f1590dcad410a418e669234b4eb0ba522f0e2
     <output url="file://$PROJECT_DIR$/bin" />
   </component>
 </project>

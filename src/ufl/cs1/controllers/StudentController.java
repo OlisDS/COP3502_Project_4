@@ -11,6 +11,8 @@ public final class StudentController implements DefenderController
 {
 	public void init(Game game) { }
 
+	//omg the code broke
+
 	public void shutdown(Game game) { }
 
 	//Store commonly needed variables here as static variables to avoid excessive method calling and memory overflow
@@ -131,16 +133,6 @@ public final class StudentController implements DefenderController
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
 	     */
 
-
-		//Calculates distance from each ghost to pacman
-		int[] ghostsToAttDist = new int[3];
-		for(int i = 0; i < ghostsToAttDist.length; i++)
-			if(enemies.get(i) == ghost)
-				continue;
-			else
-				ghostsToAttDist[i] = enemies.get(i).getLocation().getPathDistance(attackerLocation);
-
-
 		boolean safeToRushTheAttacker = true;
 		boolean ghostInRange = true;
 
@@ -182,7 +174,6 @@ public final class StudentController implements DefenderController
 			}
 		}
 	}
-
 
     public int blocker(int ghostID)
 	{

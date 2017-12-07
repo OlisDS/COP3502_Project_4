@@ -49,6 +49,9 @@ public final class StudentController implements DefenderController
 		actions[interceptorID] = interceptor(interceptorID);
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(interceptorID));
 
+		//fixme careful about Stalker. He waits for the other 3 ghosts to flee a safe distance from pacman before engaging.
+		//fixme Assigning Stalker dynamically would cause a looping pattern where two potential Stalkers constantly switch roles
+		//fixme when PacMan is in holding pattern.
 		int stalkerID = chooseStalker();
 		actions[stalkerID] = stalker(stalkerID);
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(stalkerID));
@@ -153,6 +156,7 @@ public final class StudentController implements DefenderController
          */
         Maze maze = game.getCurMaze();
 
+        //fixme? game.getPowerPillList() is already assigned to static powerPills?
 		List<Node> powerPillsLocation = game.getPowerPillList();
 		int[] distances = new int[powerPillsLocation.size()];
 
@@ -188,6 +192,7 @@ public final class StudentController implements DefenderController
 		// Approach target power pill, if sufficiently close begin loop pattern
 		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
+		//fixme? can be replaced with powerPillsLocation.isEmpty()?
 		if (!(powerPillsLocation.size() > 1)){
 			return interceptor(ghostID);
 		}
@@ -207,6 +212,10 @@ public final class StudentController implements DefenderController
 		//	Kamikaze (not one of our final ghosts) charges blindly at Pac Man until Pac Man reaches a Power Pill.
 		//	Kamikaze waits outside of Pac Man's trigger range until the other ghosts are out of PacMan's reach
 		//	Kamikaze rushes Pac Man and gets eaten immediately. and respawns to protect the other ghosts
+
+		final int SAFETY_MARGIN_FOR_OTHER_GHOST = 50;
+		final int SAFETY_MARGIN_FOR_THIS_GHOST = 50;
+
 		Defender ghost = enemies.get(ghostID);
 		if (!attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
 
@@ -215,14 +224,14 @@ public final class StudentController implements DefenderController
 		//	if a ghost (other than Kamikaze) is too close to PacMan, not safe
 		for (Defender d : enemies){
 			if (d == ghost) continue; //excluding the kamikaze ghost
-			if (d.getLocation().getPathDistance(attackerLocation) <= 50 && !powerPills.isEmpty()) safeToRushTheAttacker = false;
+			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOST && !powerPills.isEmpty()) safeToRushTheAttacker = false;
 		}
 
 		//	if other ghosts are safe distance, rush PacMan
 		if (safeToRushTheAttacker) return ghost.getNextDir(attackerLocation, true);
 
 		//	if other ghosts are not safe distance, hold off on rushing PacMan
-		if (ghost.getLocation().getPathDistance(attackerLocation) >= 50) return ghost.getNextDir(attackerLocation, true);
+		if (ghost.getLocation().getPathDistance(attackerLocation) >= SAFETY_MARGIN_FOR_THIS_GHOST) return ghost.getNextDir(attackerLocation, true);
 		else return ghost.getNextDir(attackerLocation, false);
 	}
 
@@ -246,8 +255,10 @@ public final class StudentController implements DefenderController
 	//	Sees if PacMan is dangerously close to the Power Pill
 	public boolean attackerIsHoldingPattern()
 	{
+		final int TOO_CLOSE = 20;
+
 		if (powerPills.isEmpty()) return false;
-		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= 20;
+		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= TOO_CLOSE;
 	}
 
 	//	For when ghost is vulnerable

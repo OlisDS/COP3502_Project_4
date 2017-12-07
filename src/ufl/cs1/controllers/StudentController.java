@@ -23,6 +23,7 @@ public final class StudentController implements DefenderController
 	static Node attackerLikelyTargetLocation;
 	static Attacker attacker;
 	static List<Node> attackerLikelyPath;
+	static boolean canIntercept;
 
 	static List<Integer> unassignedDefenderIDs;
 
@@ -68,9 +69,9 @@ public final class StudentController implements DefenderController
 		*/
 
 		actions[0] = interceptor(0);
-		actions[1] = stalker(1);
+		actions[1] = interceptor(1);
 		actions[2] = goalie(2);
-		actions[3] = kamikaze(3);
+		actions[3] = stalker(3);
 
 		return actions;
 	}
@@ -111,16 +112,19 @@ public final class StudentController implements DefenderController
 	    if (attackerLikelyPath.contains(ghost.getLocation()))
 	    	return ghost.getNextDir(attackerLocation, true);
 
-
 	    List<Node> pathToTarget = ghost.getPathTo(attackerLikelyTargetLocation);
 
 	    //	Sees if the ghost can intercept PacMan
 		//		if yes, the ghost contests the target
 		//		if not, the ghost simply chases PacMan
-	    if (pathToTarget.size() < attackerLikelyPath.size())
+	    if (pathToTarget.size() < attackerLikelyPath.size()) {
+			canIntercept = true;
 			return ghost.getNextDir(attackerLikelyTargetLocation, true);
-		else
+		}
+		else {
+			canIntercept = false;
 			return ghost.getNextDir(attackerLocation, true);
+		}
 	}
 
     public int stalker(int ghostID)
@@ -153,26 +157,22 @@ public final class StudentController implements DefenderController
 		//Makes the ghost trigger pacman to eat power pill when it stays on top of the pill but waits until other
 		//ghosts are at a safe distance
 		//If another ghost is chasing pacman and pacman isn't at a Power Pill, then it also chases
-		if(attacker.getLocation() == powerPills ) {
+		if(attackerIsHoldingPattern()) {
 			if (safeToRushTheAttacker)
 				return ghost.getNextDir(attackerLocation, true);
-			else{
-				if(ghost.getLocation().getPathDistance(attacker.getLocation()) > 35)
-					return ghost.getNextDir(attackerLocation, true);
-				else
-					return ghost.getNextDir(attackerLocation, false);
-			}
+			else
+				return ghost.getNextDir(attackerLocation, false);
 		}
 		else{
-			if(ghostInRange)
+			//If ghost can intercept, it will chase pacman
+			if(canIntercept)
 				return ghost.getNextDir(attackerLocation, true);
-			else {
-				if (ghost.getLocation().getPathDistance(attacker.getLocation()) > 35)
-					return ghost.getNextDir(attackerLocation, true);
-				else
+			//If ghost can't intercept, it will maintain a certain distance and follow pacman
+			else if (!canIntercept)
+				if(ghost.getLocation().getPathDistance(attackerLocation) <= 25)
 					return ghost.getNextDir(attackerLocation, false);
-			}
 		}
+		return ghost.getNextDir(attackerLocation, true);
 	}
 
     public int blocker(int ghostID)

@@ -207,8 +207,8 @@ public final class StudentController implements DefenderController
 			attackerLikelyTargetLocation = attacker.getTargetNode(game.getPillList(), true);
 	}
 
-	//FIXME this method below needs to tell if PacMan is in holding pattern.
+	//FIXME this method below needs to tell if PacMan is in holding pattern or is super close to the pill
 	public boolean attackerIsHoldingPattern(){
-		return false;
+		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= 20;
 	}
 }

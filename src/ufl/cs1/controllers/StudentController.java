@@ -43,29 +43,21 @@ public final class StudentController implements DefenderController
 
 		int[] actions = new int[Game.NUM_DEFENDER];
 
-		/*
-		fixme. Commented below is how we might implement a dynamic role-assignment model
+		int stalkerID = 1;
+		actions[stalkerID] = kamikaze(stalkerID);
+		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(stalkerID));
+
 		int interceptorID = chooseInterceptor();
 		actions[interceptorID] = interceptor(interceptorID);
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(interceptorID));
 
-		int stalkerID = chooseStalker();
-		actions[stalkerID] = stalker(stalkerID);
-		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(stalkerID));
-
-		int blockerID = chooseBlocker();
-		actions[blockerID] = blocker(blockerID);
+		int blockerID = chooseInterceptor();
+		actions[blockerID] = interceptor(blockerID);
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(blockerID));
 
 		int goalieID = chooseGoalie();
 		actions[goalieID] = goalie(goalieID);
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(goalieID));
-		*/
-
-		actions[0] = interceptor(0);
-		actions[1] = interceptor(1);
-		actions[2] = goalie(2);
-		actions[3] = kamikaze(3);
 
 		return actions;
 	}
@@ -76,10 +68,49 @@ public final class StudentController implements DefenderController
 	 */
 
 	//fixme. Each method below should decide the best ghost for the role. Available ghosts are from unassignedDefenderIDs list
-	private int chooseInterceptor() { return -1; }
-	private int chooseStalker(){return -1;}
+	private int chooseInterceptor() {
+		int bestGhostID = -1;
+		int shortestPathDistanceToAttackersTarget = Integer.MAX_VALUE;
+
+		for (Integer i : unassignedDefenderIDs){
+			Defender ghost = enemies.get(i);
+			int pathDistance = ghost.getLocation().getPathDistance(attackerLikelyTargetLocation);
+			if (shortestPathDistanceToAttackersTarget > pathDistance){
+				bestGhostID = i;
+				shortestPathDistanceToAttackersTarget = pathDistance;
+			}
+		}
+		return bestGhostID;
+	}
+	private int chooseStalker(){
+		int bestGhostID = -1;
+		int shortestPathDistanceToAttacker = Integer.MAX_VALUE;
+
+		for (Integer i : unassignedDefenderIDs){
+			Defender ghost = enemies.get(i);
+			int pathDistance = ghost.getLocation().getPathDistance(attackerLocation);
+			if (shortestPathDistanceToAttacker > pathDistance){
+				bestGhostID = i;
+				shortestPathDistanceToAttacker = pathDistance;
+			}
+		}
+		return bestGhostID;
+	}
 	private int chooseBlocker(){return -1;}
-	private int chooseGoalie(){return -1;}
+	private int chooseGoalie(){
+		int bestGhostID = -1;
+		int longestPathDistanceToAttacker = Integer.MIN_VALUE;
+
+		for (Integer i : unassignedDefenderIDs){
+			Defender ghost = enemies.get(i);
+			int pathDistance = ghost.getLocation().getPathDistance(attackerLocation);
+			if (longestPathDistanceToAttacker < pathDistance){
+				bestGhostID = i;
+				longestPathDistanceToAttacker = pathDistance;
+			}
+		}
+		return bestGhostID;
+	}
 
 
 	public int interceptor(int ghostID)

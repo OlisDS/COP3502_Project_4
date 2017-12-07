@@ -78,6 +78,7 @@ public final class StudentController implements DefenderController
 	     */
 		Defender ghost = enemies.get(ghostID);
 		if (ghost == null) return 0;
+		if (ghost.isVulnerable()) return flee(ghostID);
 
 
 		//If the ghost stands between PacMan and his likely target, the ghost will target PacMan
@@ -100,6 +101,8 @@ public final class StudentController implements DefenderController
     public int stalker(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
+		if (ghost.isVulnerable()) return flee(ghostID);
+
 	    /* FIXME blank method for now.
 	    Stalker-san should follow at a safe distance, if pacman gets near the pill and intercepter isn't on intercept path
 	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
@@ -112,6 +115,8 @@ public final class StudentController implements DefenderController
     public int blocker(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
+		if (ghost.isVulnerable()) return flee(ghostID);
+
         /* FIXME blank method for now
         Blocker-chan should block off paths that would result in pacman getting superpill position, path blocked
         should not be already covered by another ghost, determine based on last nodes in path
@@ -177,19 +182,29 @@ public final class StudentController implements DefenderController
 		}
 	}
 
-	public int kamikaze(int ghostID) {
+	public int kamikaze(int ghostID)
+	{
 		// FIXME Kamikaze needs to only trigger PacMan's Holding Pattern when the other defenders are at a safe distance
-		return enemies.get(ghostID).getNextDir(attackerLocation, true);
-	}
 
-	//FIXME for debugging purposes to test the attackerIsHoldingPattern(). Ghosts run away until Attacker is in holding pattern.
-	public int suicideLOL(int ghostID){
 		Defender ghost = enemies.get(ghostID);
-		if (attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
-		else return ghost.getNextDir(attackerLocation, false);
+		if (!attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
+
+		boolean safeToRushTheAttacker = true;
+
+		for (Defender d : enemies){
+			if (d == ghost) continue; //excluding the kamikaze ghost
+			if (d.getLocation().getPathDistance(attackerLocation) <= 50 && !powerPills.isEmpty()) safeToRushTheAttacker = false;
+		}
+
+		if (safeToRushTheAttacker) return enemies.get(ghostID).getNextDir(attackerLocation, true);
+
+		//Stay 15 units away from pacman
+		if (ghost.getLocation().getPathDistance(attackerLocation) >= 25) return enemies.get(ghostID).getNextDir(attackerLocation, true);
+		else return enemies.get(ghostID).getNextDir(attackerLocation, false);
 	}
 
-	public void setAttackerLikelyTargetLocation(){
+	public void setAttackerLikelyTargetLocation()
+	{
 		/*
 		Predicts PacMan's target location depending on these priorities:
 			1.	Vulnerable ghosts
@@ -207,8 +222,16 @@ public final class StudentController implements DefenderController
 			attackerLikelyTargetLocation = attacker.getTargetNode(game.getPillList(), true);
 	}
 
-	//FIXME this method below needs to tell if PacMan is in holding pattern or is super close to the pill
-	public boolean attackerIsHoldingPattern(){
+	//Sees if PacMan is dangerously close to the Power Pill
+	public boolean attackerIsHoldingPattern()
+	{
+		if (powerPills.isEmpty()) return false;
 		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= 20;
+	}
+
+	public int flee(int ghostID)
+	{
+		Defender ghost = enemies.get(ghostID);
+		return ghost.getNextDir(attackerLocation, false);
 	}
 }

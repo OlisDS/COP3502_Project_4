@@ -127,54 +127,6 @@ public final class StudentController implements DefenderController
 		}
 	}
 
-    public int stalker(int ghostID)
-	{
-		Defender ghost = enemies.get(ghostID);
-		if (ghost.isVulnerable()) return flee(ghostID);
-
-	    /* FIXME blank method for now.
-	    Stalker-san should follow at a safe distance, if pacman gets near the pill and intercepter isn't on intercept path
-	    then should stay JUST out of range and then trigger pacman eating the pill by coming in range then running away
-	     */
-
-		boolean safeToRushTheAttacker = true;
-		boolean ghostInRange = true;
-
-		//Used to determine if the other ghosts are out of range of pacman before triggering him
-		final int SAFETY_MARGIN_FOR_OTHER_GHOST = 50;
-		for (Defender d : enemies){
-			if (d == ghost)
-				continue;
-			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOST && !powerPills.isEmpty())
-				safeToRushTheAttacker = false;
-		}
-		//Used to determine if the ghost should chase pacman depending on if other ghosts are chasing him
-		for(Defender d : enemies){
-			if(d.getLocation().getPathDistance(attackerLocation) >= 35)
-				ghostInRange = false;
-		}
-
-		//Makes the ghost trigger pacman to eat power pill when it stays on top of the pill but waits until other
-		//ghosts are at a safe distance
-		//If another ghost is chasing pacman and pacman isn't at a Power Pill, then it also chases
-		if(attackerIsHoldingPattern()) {
-			if (safeToRushTheAttacker)
-				return ghost.getNextDir(attackerLocation, true);
-			else
-				return ghost.getNextDir(attackerLocation, false);
-		}
-		else{
-			//If ghost can intercept, it will chase pacman
-			if(canIntercept)
-				return ghost.getNextDir(attackerLocation, true);
-			//If ghost can't intercept, it will maintain a certain distance and follow pacman
-			else if (!canIntercept)
-				if(ghost.getLocation().getPathDistance(attackerLocation) <= 25)
-					return ghost.getNextDir(attackerLocation, false);
-		}
-		return ghost.getNextDir(attackerLocation, true);
-	}
-
     public int blocker(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
@@ -252,13 +204,13 @@ public final class StudentController implements DefenderController
 		}
 	}
 
-	public int kamikaze(int ghostID)
+	public int stalker(int ghostID)
 	{
-		//	Kamikaze (not one of our final ghosts) charges blindly at Pac Man until Pac Man reaches a Power Pill.
-		//	Kamikaze waits outside of Pac Man's trigger range until the other ghosts are out of PacMan's reach
-		//	Kamikaze rushes Pac Man and gets eaten immediately. and respawns to protect the other ghosts
+		//	Stalker charges blindly at Pac Man until Pac Man reaches a Power Pill.
+		//	Stalker waits outside of Pac Man's trigger range until the other ghosts are out of PacMan's reach
+		//	Stalker rushes Pac Man and gets eaten immediately. and respawns to protect the other ghosts
 
-		final int SAFETY_MARGIN_FOR_OTHER_GHOST = 50;
+		final int SAFETY_MARGIN_FOR_OTHER_GHOSTS = 50;
 		final int SAFETY_MARGIN_FOR_THIS_GHOST = 50;
 
 		Defender ghost = enemies.get(ghostID);
@@ -269,7 +221,7 @@ public final class StudentController implements DefenderController
 		//	if a ghost (other than Kamikaze) is too close to PacMan, not safe
 		for (Defender d : enemies){
 			if (d == ghost) continue; //excluding the kamikaze ghost
-			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOST && !powerPills.isEmpty()) safeToRushTheAttacker = false;
+			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOSTS && !powerPills.isEmpty()) safeToRushTheAttacker = false;
 		}
 
 		//	if other ghosts are safe distance, rush PacMan
@@ -278,6 +230,13 @@ public final class StudentController implements DefenderController
 		//	if other ghosts are not safe distance, hold off on rushing PacMan
 		if (ghost.getLocation().getPathDistance(attackerLocation) >= SAFETY_MARGIN_FOR_THIS_GHOST) return ghost.getNextDir(attackerLocation, true);
 		else return ghost.getNextDir(attackerLocation, false);
+	}
+	
+	//	For when ghost is vulnerable
+	public int flee(int ghostID)
+	{
+		Defender ghost = enemies.get(ghostID);
+		return ghost.getNextDir(attackerLocation, false);
 	}
 
 	public void setAttackerLikelyTargetLocation()
@@ -304,12 +263,5 @@ public final class StudentController implements DefenderController
 
 		if (powerPills.isEmpty()) return false;
 		return attackerLocation.getPathDistance(attacker.getTargetNode(powerPills, true)) <= TOO_CLOSE;
-	}
-
-	//	For when ghost is vulnerable
-	public int flee(int ghostID)
-	{
-		Defender ghost = enemies.get(ghostID);
-		return ghost.getNextDir(attackerLocation, false);
 	}
 }

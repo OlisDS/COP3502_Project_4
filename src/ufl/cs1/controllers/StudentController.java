@@ -66,7 +66,7 @@ public final class StudentController implements DefenderController
 		*/
 
 		actions[0] = interceptor(0);
-		actions[1] = interceptor(1);
+		actions[1] = blocker(1);
 		actions[2] = goalie(2);
 		actions[3] = stalker(3);
 
@@ -133,6 +133,26 @@ public final class StudentController implements DefenderController
         Blocker-chan should block off paths that would result in pacman getting superpill position, path blocked
         should not be already covered by another ghost, determine based on last nodes in path
          */
+
+		List<Node> powerPillsLocation = game.getPowerPillList();
+
+		for (int i = 0; i < powerPillsLocation.size(); i++){
+			if (attackerLikelyPath.contains(powerPillsLocation.get(i))) {
+				return ghost.getNextDir(attackerLikelyTargetLocation, false);
+			}
+		}
+
+		if (attackerLikelyPath.contains(ghost.getLocation())){
+
+    		return ghost.getNextDir(attackerLocation, true);
+		}
+
+		else{
+
+			for (int i = 0; i < powerPillsLocation.size(); i++){
+				return ghost.getNextDir(powerPillsLocation.get(i), true);
+			}
+		}
 
 		return 0;
 	}

@@ -10,22 +10,19 @@ import java.util.List;
 public final class StudentController implements DefenderController
 {
 	public void init(Game game) { }
-
-	//omg the code broke
-
 	public void shutdown(Game game) { }
 
 	//Store commonly needed variables here as static variables to avoid excessive method calling and memory overflow
-	static Node attackerLocation;
-	static Game game;
-	static List<Node> powerPills;
-	static List<Defender> enemies;
-	static Node attackerLikelyTargetLocation;
-	static Attacker attacker;
-	static List<Node> attackerLikelyPath;
-	static boolean canIntercept;
+	private static Node attackerLocation;
+	private static Game game;
+	private static List<Node> powerPills;
+	private static List<Defender> enemies;
+	private static Node attackerLikelyTargetLocation;
+	private static Attacker attacker;
+	private static List<Node> attackerLikelyPath;
+	private static boolean canIntercept;
 
-	static List<Integer> unassignedDefenderIDs;
+	private static List<Integer> unassignedDefenderIDs;
 
 	public int[] update(Game game2,long timeDue)
 	{
@@ -39,7 +36,7 @@ public final class StudentController implements DefenderController
 		setAttackerLikelyTargetLocation();
 		attackerLikelyPath = attacker.getPathTo(attackerLikelyTargetLocation);
 
-		//unassignedDefenderIDs holds all the ghost IDs that have not been assigned roles
+		//	unassignedDefenderIDs holds all the ghost IDs that have not been assigned roles
 		unassignedDefenderIDs = new LinkedList<>();
 		for (int i = 0; i < 4; i++) unassignedDefenderIDs.add(i);
 
@@ -88,7 +85,7 @@ public final class StudentController implements DefenderController
 	private int chooseGoalie(){return -1;}
 
 
-	public int interceptor(int ghostID)
+	private int interceptor(int ghostID)
 	{
 	    /* Original idea:
 	    Intercepter-kun work off premise IF it can get between pacman and the pill he's going to get between the two on
@@ -127,7 +124,7 @@ public final class StudentController implements DefenderController
 		}
 	}
 
-    public int blocker(int ghostID)
+	private int blocker(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
 		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
@@ -140,7 +137,7 @@ public final class StudentController implements DefenderController
 		return 0;
 	}
 
-    public int goalie(int ghostID)
+	private int goalie(int ghostID)
 	{
         /*
         Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
@@ -148,7 +145,6 @@ public final class StudentController implements DefenderController
          */
         Maze maze = game.getCurMaze();
 
-        //fixme? game.getPowerPillList() is already assigned to static powerPills?
 		List<Node> powerPillsLocation = game.getPowerPillList();
 		int[] distances = new int[powerPillsLocation.size()];
 
@@ -204,7 +200,7 @@ public final class StudentController implements DefenderController
 		}
 	}
 
-	public int stalker(int ghostID)
+	private int stalker(int ghostID)
 	{
 		//	Stalker charges blindly at Pac Man until Pac Man reaches a Power Pill.
 		//	Stalker waits outside of Pac Man's trigger range until the other ghosts are out of PacMan's reach
@@ -218,9 +214,9 @@ public final class StudentController implements DefenderController
 
 		boolean safeToRushTheAttacker = true;
 
-		//	if a ghost (other than Kamikaze) is too close to PacMan, not safe
+		//	if a ghost (other than Stalker) is too close to PacMan, not safe
 		for (Defender d : enemies){
-			if (d == ghost) continue; //excluding the kamikaze ghost
+			if (d == ghost) continue; //excluding the Stalker ghost
 			if (d.getLocation().getPathDistance(attackerLocation) <= SAFETY_MARGIN_FOR_OTHER_GHOSTS && !powerPills.isEmpty()) safeToRushTheAttacker = false;
 		}
 
@@ -233,13 +229,13 @@ public final class StudentController implements DefenderController
 	}
 	
 	//	For when ghost is vulnerable
-	public int flee(int ghostID)
+	private int flee(int ghostID)
 	{
 		Defender ghost = enemies.get(ghostID);
 		return ghost.getNextDir(attackerLocation, false);
 	}
 
-	public void setAttackerLikelyTargetLocation()
+	private void setAttackerLikelyTargetLocation()
 	{
 		//	Predicts PacMan's target location depending on these priorities:
 		//		1.	Vulnerable ghosts
@@ -257,7 +253,7 @@ public final class StudentController implements DefenderController
 	}
 
 	//	Sees if PacMan is dangerously close to the Power Pill
-	public boolean attackerIsHoldingPattern()
+	private boolean attackerIsHoldingPattern()
 	{
 		final int TOO_CLOSE = 20;
 

@@ -65,8 +65,8 @@ public final class StudentController implements DefenderController
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(goalieID));
 		*/
 
-		actions[0] = interceptor(0);
-		actions[1] = blocker(1);
+		actions[0] = blockerSenpai(0);
+		actions[1] = interceptor(1);
 		actions[2] = goalie(2);
 		actions[3] = stalker(3);
 
@@ -155,6 +155,21 @@ public final class StudentController implements DefenderController
 		}
 
 		return 0;
+	}
+
+	private int blockerSenpai(int ghostID)
+	{
+		/**
+		 * Senpai is always trying to get a good view of PacMan-senpai.
+		 * Whenever a defender is in his way, Senpai will find another way to see PacMan-senpai
+		 */
+		Defender ghost = enemies.get(ghostID);
+		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
+		if (attackerLikelyPath.contains(ghost.getLocation())) return ghost.getNextDir(attackerLocation, true);
+
+		List<Node> path = ghost.getPathTo(attackerLocation);
+		for (Defender d : enemies) if (path.contains(d.getLocation())) return (ghost.getNextDir(attackerLocation, true) + 1) % 4;
+        return ghost.getNextDir(attackerLocation, true);
 	}
 
 	private int goalie(int ghostID)

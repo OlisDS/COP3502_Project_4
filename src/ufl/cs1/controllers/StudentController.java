@@ -65,7 +65,7 @@ public final class StudentController implements DefenderController
 		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(goalieID));
 		*/
 
-		actions[0] = blockerSenpai(0);
+		actions[0] = blocker(0);
 		actions[1] = interceptor(1);
 		actions[2] = goalie(2);
 		actions[3] = stalker(3);

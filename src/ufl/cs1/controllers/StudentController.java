@@ -243,7 +243,7 @@ public final class StudentController implements DefenderController
 		final int SAFETY_MARGIN_FOR_THIS_GHOST = 50;
 
 		Defender ghost = enemies.get(ghostID);
-		if (!attackerIsHoldingPattern()) return ghost.getNextDir(attackerLocation, true);
+		if (!attackerIsHoldingPattern() || canIntercept) return ghost.getNextDir(attackerLocation, true);
 
 		boolean safeToRushTheAttacker = true;
 

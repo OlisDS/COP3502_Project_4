@@ -159,8 +159,8 @@ public final class StudentController implements DefenderController
 
 	private int blockerSenpai(int ghostID)
 	{
-		//	Senpai is always trying to get a good view of PacMan-senpai.
-		//	Whenever a defender is in his way, Senpai will find another way to see PacMan-senpai
+		//	Senpai is always trying to get a good view of PacMan.
+		//	Whenever a defender is in his way, Senpai will find another way to see PacMan
 		Defender ghost = enemies.get(ghostID);
 		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
 		if (attackerLikelyPath.contains(ghost.getLocation())) return ghost.getNextDir(attackerLocation, true);

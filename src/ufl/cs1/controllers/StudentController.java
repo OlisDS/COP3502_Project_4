@@ -107,7 +107,7 @@ public final class StudentController implements DefenderController
 
 		//	If the ghost stands between PacMan and his likely target, the ghost will target PacMan
 	    if (attackerLikelyPath.contains(ghost.getLocation()))
-	    	return ghost.getNextDir(attackerLocation, true);
+	    	return chase(ghostID);
 
 	    List<Node> pathToTarget = ghost.getPathTo(attackerLikelyTargetLocation);
 
@@ -120,7 +120,7 @@ public final class StudentController implements DefenderController
 		}
 		else {
 			canIntercept = false;
-			return ghost.getNextDir(attackerLocation, true);
+			return chase(ghostID);
 		}
 	}
 
@@ -144,7 +144,7 @@ public final class StudentController implements DefenderController
 
 		if (attackerLikelyPath.contains(ghost.getLocation())){
 
-    		return ghost.getNextDir(attackerLocation, true);
+    		return chase(ghostID);
 		}
 
 		else{
@@ -163,11 +163,11 @@ public final class StudentController implements DefenderController
 		//	Whenever a defender is in his way, Senpai will find another way to see PacMan
 		Defender ghost = enemies.get(ghostID);
 		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
-		if (attackerLikelyPath.contains(ghost.getLocation())) return ghost.getNextDir(attackerLocation, true);
+		if (attackerLikelyPath.contains(ghost.getLocation())) return chase(ghostID);
 
 		List<Node> path = ghost.getPathTo(attackerLocation);
 		for (Defender d : enemies) if (path.contains(d.getLocation())) return (ghost.getNextDir(attackerLocation, true) + 1) % 4;
-        return ghost.getNextDir(attackerLocation, true);
+        return chase(ghostID);
 	}
 
 	private int goalie(int ghostID)
@@ -217,7 +217,7 @@ public final class StudentController implements DefenderController
 		//	if pacman is chasing the goalie's pill, the goalie reads that it is in PacMan's likely path and proceeds to chase PacMan
 		//	until it is not in PacMan's path
 		if (attackerLikelyPath.contains(ghost.getLocation()))
-			return ghost.getNextDir(attackerLocation, true);
+			return chase(ghostID);
 
 		if (!(powerPillsLocation.size() > 1)){
 			return interceptor(ghostID);
@@ -243,7 +243,7 @@ public final class StudentController implements DefenderController
 		final int SAFETY_MARGIN_FOR_THIS_GHOST = 50;
 
 		Defender ghost = enemies.get(ghostID);
-		if (!attackerIsHoldingPattern() || canIntercept) return ghost.getNextDir(attackerLocation, true);
+		if (!attackerIsHoldingPattern() || canIntercept) return chase(ghostID);
 
 		boolean safeToRushTheAttacker = true;
 
@@ -254,10 +254,10 @@ public final class StudentController implements DefenderController
 		}
 
 		//	if other ghosts are safe distance, rush PacMan
-		if (safeToRushTheAttacker) return ghost.getNextDir(attackerLocation, true);
+		if (safeToRushTheAttacker) return chase(ghostID);
 
 		//	if other ghosts are not safe distance, hold off on rushing PacMan
-		if (ghost.getLocation().getPathDistance(attackerLocation) >= SAFETY_MARGIN_FOR_THIS_GHOST) return ghost.getNextDir(attackerLocation, true);
+		if (ghost.getLocation().getPathDistance(attackerLocation) >= SAFETY_MARGIN_FOR_THIS_GHOST) return chase(ghostID);
 		else return ghost.getNextDir(attackerLocation, false);
 	}
 	
@@ -266,6 +266,12 @@ public final class StudentController implements DefenderController
 	{
 		Defender ghost = enemies.get(ghostID);
 		return ghost.getNextDir(attackerLocation, false);
+	}
+	
+	private int chase(int ghostID)
+	{
+		Defender ghost = enemies.get(ghostID);
+		return ghost.getNextDir(attackerLocation, true);
 	}
 
 	private void setAttackerLikelyTargetLocation()

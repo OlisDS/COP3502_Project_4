@@ -22,11 +22,9 @@ public final class StudentController implements DefenderController
 	private static List<Node> attackerLikelyPath;
 	private static boolean canIntercept;
 
-	private static List<Integer> unassignedDefenderIDs;
-
 	public int[] update(Game game2,long timeDue)
 	{
-		//Assign values to static members here
+
 		game = game2;
 		attacker = game.getAttacker();
 		attackerLocation = game.getAttacker().getLocation();
@@ -36,34 +34,8 @@ public final class StudentController implements DefenderController
 		setAttackerLikelyTargetLocation();
 		attackerLikelyPath = attacker.getPathTo(attackerLikelyTargetLocation);
 
-		//	unassignedDefenderIDs holds all the ghost IDs that have not been assigned roles
-		unassignedDefenderIDs = new LinkedList<>();
-		for (int i = 0; i < 4; i++) unassignedDefenderIDs.add(i);
-
 
 		int[] actions = new int[Game.NUM_DEFENDER];
-
-		/*
-		fixme. Commented below is how we might implement a dynamic role-assignment model
-		int interceptorID = chooseInterceptor();
-		actions[interceptorID] = interceptor(interceptorID);
-		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(interceptorID));
-
-		//fixme careful about Stalker. He waits for the other 3 ghosts to flee a safe distance from pacman before engaging.
-		//fixme Assigning Stalker dynamically would cause a looping pattern where two potential Stalkers constantly switch roles
-		//fixme when PacMan is in holding pattern.
-		int stalkerID = chooseStalker();
-		actions[stalkerID] = stalker(stalkerID);
-		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(stalkerID));
-
-		int blockerID = chooseBlocker();
-		actions[blockerID] = blocker(blockerID);
-		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(blockerID));
-
-		int goalieID = chooseGoalie();
-		actions[goalieID] = goalie(goalieID);
-		unassignedDefenderIDs.remove(unassignedDefenderIDs.indexOf(goalieID));
-		*/
 
 		actions[0] = blocker(0);
 		actions[1] = interceptor(1);
@@ -73,26 +45,8 @@ public final class StudentController implements DefenderController
 		return actions;
 	}
 
-	/* FIXME Behavior will be implemented dynamically, i.e. when we update we will assign roles (who gets what method)
-	based on current game states like who's in the best position to intercept, follow, etc.
-	Will need way for the ghosts to communicate, booleans paths etc.
-	 */
-
-	//fixme. Each method below should decide the best ghost for the role. Available ghosts are from unassignedDefenderIDs list
-	private int chooseInterceptor() { return -1; }
-	private int chooseStalker(){return -1;}
-	private int chooseBlocker(){return -1;}
-	private int chooseGoalie(){return -1;}
-
-
 	private int interceptor(int ghostID)
 	{
-	    /* Original idea:
-	    Intercepter-kun work off premise IF it can get between pacman and the pill he's going to get between the two on
-	    pacman's current/predicted path (shortest), the best way of doing this would be to figure out the shortest path
-	    to pacman's path but prioritize nodes later on in pacman's path (as he will be moving)
-	    ELSE should wait at safe distance (out of pacman's reach for when he gets the pill)
-	     */
 
 	    /* Actual implementation:
 	    Interceptor sets its target Node to PacMan's target Node. Checks to see if it can intercept the target
@@ -129,8 +83,8 @@ public final class StudentController implements DefenderController
 		Defender ghost = enemies.get(ghostID);
 		if (ghost.isVulnerable() || attackerIsHoldingPattern()) return flee(ghostID);
 
-        /* FIXME blank method for now
-        Blocker-chan should block off paths that would result in pacman getting superpill position, path blocked
+        /*
+        Blocker should block off paths that would result in pacman getting superpill position, path blocked
         should not be already covered by another ghost, determine based on last nodes in path
          */
 
@@ -173,7 +127,7 @@ public final class StudentController implements DefenderController
 	private int goalie(int ghostID)
 	{
         /*
-        Goalie kun should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
+        Goalie should be the furthest away ghost from doing anything, job will be to camp a power pill elsewhere
         This is a means of blocking off future paths and decisions by pacman
          */
         Maze maze = game.getCurMaze();
@@ -205,11 +159,7 @@ public final class StudentController implements DefenderController
 				secondClosest = powerPillsLocation.get(i);
 			}
 		}
-
-		// Complete by having hover shortest circular path through node and if pacman begins approaching node change to
-		// attack pattern, like a goalie rushing a forward, perhaps implement this behavior via intercept in update method
-		// FIXME Have circle around going through multiple times.
-		// Come up with contingency for when no power pills left, roam and run away?
+		
 		// Approach target power pill, if sufficiently close begin loop pattern
 		// If pacman is close then attack him
 		Defender ghost = enemies.get(ghostID);
